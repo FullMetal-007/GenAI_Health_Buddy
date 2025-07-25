@@ -1,4 +1,4 @@
-# GenAI Health Buddy 🤖❤️
+# GenAI Health Buddy 🤖❤
 
 GenAI Health Buddy is an AI-powered web application designed to be a personal health assistant. It leverages the Google Gemini API to provide intelligent analysis of medical prescriptions, detailed information about medicines, preliminary symptom checks, and an interactive chat for health-related queries.
 
