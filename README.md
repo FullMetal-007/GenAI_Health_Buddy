@@ -113,7 +113,12 @@ The server will provide a URL, typically `http://localhost:3000`. Open this URL 
 ## Sample Images 
 
 <img width="1868" height="888" alt="Index_page" src="https://github.com/user-attachments/assets/010f503c-e56d-4bfb-897c-023138883424" />
+<img width="1873" height="880" alt="interact_section" src="https://github.com/user-attachments/assets/e146d0b4-7c8f-4887-90f9-ba320e50a51a" />
+<img width="1870" height="882" alt="scan_section" src="https://github.com/user-attachments/assets/8bbe0eda-d919-419a-ace1-12320bd85a25" />
+<img width="1873" height="880" alt="search_bar" src="https://github.com/user-attachments/assets/78bfc219-f665-4c47-b4b3-28848d422640" />
+<img width="1878" height="877" alt="symptoms_section" src="https://github.com/user-attachments/assets/711f5c30-7316-4fed-9063-bc8e2a95db82" />
 
+---
 
 ## ⚠️ Disclaimer
 
