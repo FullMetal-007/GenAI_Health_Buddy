@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3e%3cpath d='M8 28C8 26.8954 8.89543 26 10 26H38C39.1046 26 40 26.8954 40 28V42C40 43.1046 39.1046 44 38 44H10C8.89543 44 8 43.1046 8 42V28Z' fill='%230A2540'/%3e%3cpath d='M24 38.6L22.2 37.04C18.4 33.76 16 31.6 16 28.8C16 26.728 17.728 25 19.8 25C21.44 25 23 26 24 27.4C25 26 26.56 25 28.2 25C30.272 25 32 26.728 32 28.8C32 31.6 29.6 33.76 25.8 37.04L24 38.6Z' fill='%2360B4D5'/%3e%3cpath d='M11 10C11 8.89543 11.8954 8 13 8H35C36.1046 8 37 8.89543 37 10V26H11V10Z' fill='%230A2540'/%3e%3ccircle cx='19' cy='17' r='3' fill='%2300A3BF'/%3e%3ccircle cx='29' cy='17' r='3' fill='%2300A3BF'/%3e%3ccircle cx='19' cy='17' r='1.2' fill='white'/%3e%3ccircle cx='29' cy='17' r='1.2' fill='white'/%3e%3c/svg%3e" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenAI Health Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: 'hsl(210, 40%, 50%)',
+                light: 'hsl(210, 40%, 95%)',
+                dark: 'hsl(210, 40%, 50%)',
+              },
+              secondary: {
+                DEFAULT: 'hsl(180, 50%, 50%)',
+                light: 'hsl(180, 50%, 95%)',
+                dark: 'hsl(180, 50%, 45%)',
+              },
+              background: 'hsl(0, 0%, 100%)',
+              foreground: 'hsl(215, 25%, 27%)',
+              'dark-background': 'hsl(215, 28%, 17%)',
+              'dark-foreground': 'hsl(210, 40%, 96%)',
+              'dark-surface': 'hsl(215, 25%, 22%)',
+              'dark-border': 'hsl(215, 20%, 30%)',
+            },
+            animation: {
+              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+            },
+            keyframes: {
+              'fade-in-up': {
+                '0%': {
+                  opacity: '0',
+                  transform: 'translateY(20px)',
+                },
+                '100%': {
+                  opacity: '1',
+                  transform: 'translateY(0)',
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "jspdf": "https://esm.sh/jspdf@2.5.1/dist/jspdf.es.min.js",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background dark:bg-dark-background">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <footer class="text-center py-4 px-2 text-xs text-gray-500 dark:text-gray-400">
+      <p>Developed Manish Mora - FullMetal-007</p>
+      <p class="mt-1">Powered by the Google Gemini API, React, and Tailwind CSS.</p>
+    </footer>
+  </body>
+</html>
+

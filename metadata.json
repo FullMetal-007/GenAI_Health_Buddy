@@ -1,0 +1,7 @@
+{
+  "name": "GenAI Health Buddy",
+  "description": "An AI-powered assistant to analyze medical prescriptions and provide detailed information about medications. Upload a prescription image for a summary or search for a specific medicine to learn about its uses, dosage, and side effects.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
