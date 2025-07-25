@@ -1,4 +1,4 @@
-# GenAI Health Buddy 🤖❤
+# GenAI Health Buddy 🤖
 
 GenAI Health Buddy is an AI-powered web application designed to be a personal health assistant. It leverages the Google Gemini API to provide intelligent analysis of medical prescriptions, detailed information about medicines, preliminary symptom checks, and an interactive chat for health-related queries.
 
@@ -36,7 +36,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 -   [Node.js](https://nodejs.org/) (v18 or later recommended for native `fetch` support)
 -   `npm` or `yarn` package manager
--   A [Google AI Studio API Key](https://aistudio.google.com/app/apikey)
+-   A [Google Gemini API Key]
 -   A [Meta Developer Account](https://developers.facebook.com/) and a configured Meta App with the WhatsApp Business Platform.
 
 ### 1. Clone the Repository
@@ -57,7 +57,7 @@ You'll need to create two `.env` files: one for the frontend (in the root direct
 
     ```env
     # .env
-    API_KEY=your_google_ai_studio_api_key
+    API_KEY=your_api_key
     ```
 
 **B. Backend Meta Credentials (`/backend` directory)**
