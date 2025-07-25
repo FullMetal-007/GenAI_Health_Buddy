@@ -1,4 +1,3 @@
-
 # GenAI Health Buddy 🤖❤️
 
 GenAI Health Buddy is an AI-powered web application designed to be a personal health assistant. It leverages the Google Gemini API to provide intelligent analysis of medical prescriptions, detailed information about medicines, preliminary symptom checks, and an interactive chat for health-related queries.
@@ -10,7 +9,7 @@ GenAI Health Buddy is an AI-powered web application designed to be a personal he
 ## ✨ Core Features
 
 -   **📄 Prescription Analysis**: Upload a photo of a medical prescription. The AI extracts medications, dosages, timings, and other vital information into a clean, easy-to-read summary.
--   **📱 WhatsApp Integration**: Seamlessly send the generated prescription summary to a patient's WhatsApp number via the Twilio API, ensuring information is accessible and shareable.
+-   **📱 WhatsApp Integration**: Seamlessly send the generated prescription summary to a patient's WhatsApp number via the **Meta WhatsApp Business API**, ensuring information is accessible and shareable.
 -   **💊 Medicine Information**: Search for any medicine to get a detailed overview, including its common uses, recommended dosage, potential side effects, and important precautions.
 -   **🩺 Symptom Checker**: Describe your symptoms in plain language to receive a preliminary AI analysis, which includes possible conditions, actionable advice, and an urgency assessment.
 -   **💬 Interactive Health Chat**: Engage in a conversation with an AI health buddy. Ask about medicine interactions, wellness tips, or general health questions in a friendly, chat-based interface.
@@ -24,8 +23,8 @@ GenAI Health Buddy is an AI-powered web application designed to be a personal he
 -   **Frontend**: React, TypeScript, Tailwind CSS
 -   **AI Engine**: Google Gemini API (`gemini-2.5-flash`) for all generative tasks.
 -   **Backend**: Node.js, Express
--   **Notifications**: Twilio Messaging API for WhatsApp
--   **Tooling**: Vite (or any simple static server for development)
+-   **Notifications**: **Meta WhatsApp Business API**
+-   **Tooling**: A simple static file server (e.g., `npx serve`). The project uses a modern, no-build setup with native ES Modules and `importmap`.
 
 ---
 
@@ -35,10 +34,10 @@ Follow these instructions to set up and run the project on your local machine.
 
 ### Prerequisites
 
--   [Node.js](https://nodejs.org/) (v18 or later recommended)
+-   [Node.js](https://nodejs.org/) (v18 or later recommended for native `fetch` support)
 -   `npm` or `yarn` package manager
 -   A [Google AI Studio API Key](https://aistudio.google.com/app/apikey)
--   A [Twilio Account](https://www.twilio.com/try-twilio) with a configured WhatsApp Sandbox number.
+-   A [Meta Developer Account](https://developers.facebook.com/) and a configured Meta App with the WhatsApp Business Platform.
 
 ### 1. Clone the Repository
 
@@ -49,7 +48,7 @@ cd genai-health-buddy
 
 ### 2. Configure Environment Variables
 
-You'll need to create two `.env` files: one for the frontend (in the root directory) and one for the backend.
+You'll need to create two `.env` files: one for the frontend (in the root directory) and one for the backend. The application code expects these to be loaded into the environment.
 
 **A. Frontend API Key (Root Directory)**
 
@@ -61,17 +60,16 @@ You'll need to create two `.env` files: one for the frontend (in the root direct
     API_KEY=your_google_ai_studio_api_key
     ```
 
-**B. Backend Twilio Credentials (`/backend` directory)**
+**B. Backend Meta Credentials (`/backend` directory)**
 
 1.  Navigate to the `backend` directory: `cd backend`
 2.  Create a file named `.env` inside the `backend` folder.
-3.  Add your Twilio credentials:
+3.  Add your Meta WhatsApp Business API credentials. You can get these from your app's dashboard under "WhatsApp" > "API Setup".
 
     ```env
     # backend/.env
-    TWILIO_ACCOUNT_SID=your_twilio_account_sid
-    TWILIO_AUTH_TOKEN=your_twilio_auth_token
-    TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886 # Use your Twilio Sandbox number
+    META_PHONE_NUMBER_ID=your_phone_number_id
+    META_ACCESS_TOKEN=your_temporary_or_permanent_access_token
     ```
 
 ### 3. Install Dependencies & Run
@@ -109,9 +107,8 @@ The server will provide a URL, typically `http://localhost:3000`. Open this URL 
 | Variable                   | File Location      | Description                                                              |
 | -------------------------- | ------------------ | ------------------------------------------------------------------------ |
 | `API_KEY`                  | `./.env`           | Your Google Gemini API Key for all AI-related features.                  |
-| `META_ACCOUNT_SID`         | `./backend/.env`   | Your Twilio Account SID for authentication.                              |
-| `META_AUTH_TOKEN`          | `./backend/.env`   | Your Twilio Auth Token for authentication.                               |
-| `META_WHATSAPP_NUMBER`     | `./backend/.env`   | Your Twilio WhatsApp-enabled number (e.g., the sandbox number).          |
+| `META_PHONE_NUMBER_ID`     | `./backend/.env`   | The Phone Number ID from your Meta App's WhatsApp API setup page.        |
+| `META_ACCESS_TOKEN`        | `./backend/.env`   | A valid access token for the Meta WhatsApp Business API.                 |
 
 ---
 
